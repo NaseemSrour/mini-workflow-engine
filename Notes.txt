@@ -4,19 +4,24 @@ Documentation sections:
 losing track of running workflows.
 I haven't configured persistant storage with Redis - but the idea is what's important: storing information
 without relying on local memory of a pod/container.
+[It can be any other database, for example a remote MySQL server, or a cloud-managed DB like Firestore (Firebase).]
 
 
 * Stateless: Each pod/container can read/write task statuses to Redis without relying on local memory, thus achieving stateless manner.
 
 * No input validation checks implemented for the time being.
 
-* I would abstract the persistant storage layer away, so that Redis can be replaced with any other implemenation
-seamlessly.
+*** I would abstract the persistant storage layer away, so that Redis can be replaced with any other implemenation
+seamlessly. But I didn't do it for this assignment, since it's not what you're looking for, as you mentioned in
+our phone conversation.
+
+Thus, having it as a separate (abstract) module, it'd make configuring it much easier, and also easier to mock it during testing.
 
 -------
-Questions for Baruch:
 
 I used the "redis:alpine" image on my Windows machine, and used it as Redis.
+The assignment says Redis is available, so this is how I used it.
+
 All prerequisites are defined in the Readme file, or, you can simply install them: pip install -r requirements.txt
 
 And run as requested: uvicorn main:app --reload
