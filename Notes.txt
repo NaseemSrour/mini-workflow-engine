@@ -1,22 +1,23 @@
 Documentation sections:
 
-* Scalable: Redis is a shared storage layer, thus Kubernetes can scale up/down pods (SCALABLE) without
+* Scalable: Redis here is used as a shared storage layer (I haven't used it before!), thus Kubernetes can scale up/down pods (SCALABLE) without
 losing track of running workflows.
+I haven't configured persistant storage with Redis - but the idea is what's important: storing information
+without relying on local memory of a pod/container.
 
 
-* Stateless: Each pod/container can read/write task statuses to Redis without relying on local memory.
+* Stateless: Each pod/container can read/write task statuses to Redis without relying on local memory, thus achieving stateless manner.
 
-* No input validation checks
+* No input validation checks implemented for the time being.
 
-* Can abstract the persistant storage layer, so that Redis can be replaced with any other implemenation
+* I would abstract the persistant storage layer away, so that Redis can be replaced with any other implemenation
 seamlessly.
 
 -------
 Questions for Baruch:
 
-1. Can you give an ABSTRACT example of how the engine will be called/used? I need an example of calls
-(doesn't matter the input JSON structure for now)
+I used the "redis:alpine" image on my Windows machine, and used it as Redis.
+All prerequisites are defined in the Readme file, or, you can simply install them: pip install -r requirements.txt
 
-2. I can't use Redis locally. Can you give me a concrete example
-of how Redis can be used/called in the final environment where the code will run?
+And run as requested: uvicorn main:app --reload
 
