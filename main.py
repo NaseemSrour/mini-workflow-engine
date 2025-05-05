@@ -97,6 +97,7 @@ Workflow input JSON structure:
     {"type": "sequential", "tasks": ["task_c"]}
   ]
 }
+# Each entry in the workflow structure is a "step" in the workflow.
 
 ---
 
