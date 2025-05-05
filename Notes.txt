@@ -1,4 +1,4 @@
-Documentation sections:
+Notes & assumptions:
 
 * Scalable: Redis here is used as a shared storage layer (I haven't used it before!), thus Kubernetes can scale up/down pods (SCALABLE) without
 losing track of running workflows.
@@ -15,7 +15,7 @@ without relying on local memory of a pod/container.
 seamlessly. But I didn't do it for this assignment, since it's not what you're looking for, as you mentioned in
 our phone conversation.
 
-Thus, having it as a separate (abstract) module, it'd make configuring it much easier, and also easier to mock it during testing.
+Thus, having it as a separate (abstract) module, it'd make configuring it much easier (server IP, port, etc.), and also easier to mock it during testing.
 
 -------
 
