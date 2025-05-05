@@ -1,0 +1,22 @@
+Documentation sections:
+
+* Scalable: Redis is a shared storage layer, thus Kubernetes can scale up/down pods (SCALABLE) without
+losing track of running workflows.
+
+
+* Stateless: Each pod/container can read/write task statuses to Redis without relying on local memory.
+
+* No input validation checks
+
+* Can abstract the persistant storage layer, so that Redis can be replaced with any other implemenation
+seamlessly.
+
+-------
+Questions for Baruch:
+
+1. Can you give an ABSTRACT example of how the engine will be called/used? I need an example of calls
+(doesn't matter the input JSON structure for now)
+
+2. I can't use Redis locally. Can you give me a concrete example
+of how Redis can be used/called in the final environment where the code will run?
+
